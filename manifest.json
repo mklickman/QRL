@@ -1,0 +1,90 @@
+{
+  "name": "QRL",
+  "version": "0.0.5",
+  "description": "QRL creates a Browser Action that displays a popup containing a QR code of the current tab's URL.",
+  "icons": { "16":  "icon16.png",
+             "48":  "icon48.png",
+             "128": "icon128.png" },
+  "browser_action": {
+    "default_icon": "icon19.png",
+    "default_title": "QRL",
+    "popup": "popup.html" },
+  "permissions": [ 
+    "tabs", "http://*/*", "https://*/*"
+   ],
+  "options_page": "options.html"
+}
+
+{
+
+/*
+  {
+     // Required
+     "name": "My Extension",
+     "version": "versionString",
+   
+     // Recommended
+     "description": "A plain text description",
+     "icons": { "16": "icon16.png",
+                "48": "icon48.png",
+                "128": "icon128.png" },
+     "default_locale": "en",                // path to _locales subdirectory (leave blank if none)
+   
+     // Pick one (or none)
+     "browser_action": {
+       "default_icon": "images/icon19.png", // optional
+       "default_title": "Google Mail",      // optional; shown in tooltip
+       "default_popup": "popup.html"        // optional },
+     "page_action": {
+       "default_icon": "icons/foo.png", // optional
+       "default_title": "Do action",    // optional; shown in tooltip
+       "default_popup": "popup.html"    // optional },
+     "theme": {
+         "images" : {
+           "theme_frame" : "images/theme_frame_camo.png",
+           "theme_frame_overlay" : "images/theme_frame_stripe.png",
+           "theme_toolbar" : "images/theme_toolbar_camo.png",
+           "theme_ntp_background" : "images/theme_ntp_background_norepeat.png",
+           "theme_ntp_attribution" : "images/attribution.png"
+         },
+         "colors" : {
+           "frame" : [71, 105, 91],
+           "toolbar" : [207, 221, 192],
+           "ntp_text" : [20, 40, 0],
+           "ntp_link" : [36, 70, 0],
+           "ntp_section" : [207, 221, 192],
+           "button_background" : [255, 255, 255]
+         },
+         "tints" : {
+           "buttons" : [0.33, 0.5, 0.47]
+         },
+         "properties" : {
+           "ntp_background_alignment" : "bottom"
+         }
+       }
+     },
+     "app": {...},
+   
+   
+     // Add any of these that you need
+     "background_page": "aFile.html",
+     "chrome_url_overrides": {
+       "pageToOverride": "myPage.html" },
+     "content_scripts": [
+       {
+         "matches": ["http://www.google.com/*"],
+         "css": ["mystyles.css"],
+         "js": ["jquery.js", "myscript.js"]
+       }
+     ],
+     "homepage_url": "http://path/to/homepage",
+     "incognito": "spanning" or "split",
+     "key": "publicKey",
+     "minimum_chrome_version": "versionString",
+     "omnibox": { "keyword" : "aString" },
+     "options_page": "aFile.html",
+     "permissions": [...],
+     "plugins": [...],
+     "update_url": "http://path/to/updateInfo.xml"
+   }
+*/

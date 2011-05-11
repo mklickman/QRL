@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {        
+
+        // Gets the URL of the currently visible tab
+        chrome.tabs.getSelected(null, function(tab) {
+          $('#currentLink').html(tab.url);
+        });
+
+        // Generate QR code via Google's Chart API
+        // https://chart.googleapis.com/chart?cht=qr&chs=100x100&chl=http://google.com&choe=UTF-8
+
+        // Display QR code in popup window
+
+      });
+    </script>
+  </head>
+  <body>
+    <p id="currentLink">Loading ...</p>
+  </body>
+</html><!-- 
+
+
+  INCOMING TIE FIGHTERS!
+
+
+             |-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|
+             |-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|
+             |-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|
+             |-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|
+             |-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|
+             |-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|
+             |-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|
+
+
+             |-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|
+             |-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|
+             |-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|
+             |-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|
+             |-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|
+             |-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|
+             |-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|	|-O-| |-O-| |-O-| |-O-| |-O-|
+
+
+                                                         /     \
+                                                         |==O==|
+                                                         \     /
+
+  -->

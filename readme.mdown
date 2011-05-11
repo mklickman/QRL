@@ -1,0 +1,5 @@
+# QRL
+
+QRL is an extension for Google Chrome that simply displays a popup that shows a QR code containing the URL of the currently visible tab. Yes, there are already *several* extensions that do this, but they all suffer from some form of deal-breaker-type flaw: not being self-explanatory, having too many features (and thus, lacking focus), and flat-out not working. This extension seeks to solve this problem.
+
+Don't be surprised if there's not much here at the moment. It will be a while until there's anything functional.
