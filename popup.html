@@ -4,17 +4,30 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script>
       $(document).ready(function() {        
-
+        
+        var chartSize = "150x150";    // This will eventually be set through an options page
+        var currentUrl;
+        
         // Gets the URL of the currently visible tab
         chrome.tabs.getSelected(null, function(tab) {
           $('#currentLink').html(tab.url);
         });
-
-        // Generate QR code via Google's Chart API
+        
+        currentUrl = $('#currentLink').text();
+  
+        // Generate QR code via Google's Chart API, following this format:
         // https://chart.googleapis.com/chart?cht=qr&chs=100x100&chl=http://google.com&choe=UTF-8
+        var src =  'https://chart.googleapis.com/chart?cht=qr&';
+            src += 'chs=300x300';
+            src += '&chl=' + currentUrl;
+            src += '&choe=UTF-8';
 
         // Display QR code in popup window
+        var html = '<img src="' + src + '" alt="Scan me!" />'
 
+        $('p').hide();
+        $('body').append(html);
+        
       });
     </script>
   </head>
