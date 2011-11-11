@@ -7,32 +7,58 @@
         
         var chartSize = "150x150";    // This will eventually be set through an options page
         var currentUrl;
+        var img;
         
         // Gets the URL of the currently visible tab
         chrome.tabs.getSelected(null, function(tab) {
-          $('#currentLink').html(tab.url);
+          // $('#currentLink').html(tab.url);
+          var currentUrl = $('#currentLink').html(tab.url).text();
+          var img = '<img src="https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=' + tab.url + '&choe=UTF-8&chld=L|1">';
+          
+          // Generate QR code via Google's Chart API, following this format:
+          // https://chart.googleapis.com/chart?cht=qr&chs=100x100&chl=http://google.com&choe=UTF-8
+          var src =  'https://chart.googleapis.com/chart?cht=qr&';
+              src += 'chs=' + chartSize;
+              src += '&chl=' + currentUrl;
+              src += '&choe=UTF-8';
+              src += '&chld=L|1'
+
+          // Display QR code in popup window
+          var html = '<img src="' + src + '" alt="Scan me!" />'
+
+          // $('p').hide();
+          $('body').append(img);
+
+          $('img').click(function() {
+            $(this).animate({
+              'height': 500,
+              'width': 500
+            });
+          });
         });
-        
-        currentUrl = $('#currentLink').text();
-  
-        // Generate QR code via Google's Chart API, following this format:
-        // https://chart.googleapis.com/chart?cht=qr&chs=100x100&chl=http://google.com&choe=UTF-8
-        var src =  'https://chart.googleapis.com/chart?cht=qr&';
-            src += 'chs=300x300';
-            src += '&chl=' + currentUrl;
-            src += '&choe=UTF-8';
-
-        // Display QR code in popup window
-        var html = '<img src="' + src + '" alt="Scan me!" />'
-
-        $('p').hide();
-        $('body').append(html);
-        
       });
     </script>
+    <style>
+      
+      body {
+        background: #ccc;
+        -webkit-border-radius: 5px;
+        -webkit-box-shadow: 2px 2px 3px 2px #ccc inset;
+        margin: 5px;
+        padding: 25px; }
+              
+      img {
+        height: 150px;
+        width: 150px;
+        -webkit-border-radius: 5px;
+        -webkit-box-shadow: -1px 1px 0 rgba(0,0,0,0.25);
+      }
+      
+    </style>
   </head>
   <body>
     <p id="currentLink">Loading ...</p>
+    <div id="image_bg"></div>
   </body>
 </html><!-- 
 
